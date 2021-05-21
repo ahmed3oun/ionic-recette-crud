@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Recette } from '../model/recette';
+import { RecetteService } from '../service/recette.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  recettes : Recette[];
 
-  constructor() {}
+  constructor(private recetteService : RecetteService) {}
+
+  /*ngOnInit(){
+    this.recettes = this.recetteService.getRecettes();
+  }*/
+
+  ionViewWillEnter(){
+    this.recettes = this.recetteService.getRecettes();
+  }
 
 }
