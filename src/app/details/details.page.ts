@@ -23,7 +23,7 @@ export class DetailsPage implements OnInit {
     this.alertConroller.create(
       {
         header : "Suppression",
-        message : "Êtes-vous sûre de vouloir supprimer la recette",
+        message : "Êtes-vous sûre de vouloir supprimer la recette?",
         buttons : [
           {
             text : "Annuler",
