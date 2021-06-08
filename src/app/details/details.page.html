@@ -5,7 +5,12 @@
     </ion-buttons>
     <ion-title>{{recetteActive.title}}</ion-title>
     <ion-buttons slot="primary">
-      <ion-button (click)="deleteRecette()"><ion-icon name="trash-outline"></ion-icon></ion-button>
+      <ion-button (click)="deleteRecette()"
+        ><ion-icon name="trash-outline"></ion-icon
+      ></ion-button>
+      <ion-button (click)="updateRecette()">
+        <ion-icon name="create" class="ion-padding-horizontal"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -26,9 +31,7 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        {{recetteActive.description}}
-      </ion-col>
+      <ion-col> {{recetteActive.description}} </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
@@ -40,5 +43,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </ion-content>

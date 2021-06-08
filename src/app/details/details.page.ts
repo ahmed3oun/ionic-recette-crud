@@ -47,10 +47,34 @@ export class DetailsPage implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       params => {
-        console.log(params['id']);
         this.recetteActive = this.recetteService.getRecetteById(+params['id']);
       }
     );
+  }
+
+  updateRecette(){
+    this.alertConroller.create(
+      {
+        header : "Edit",
+        message : "Êtes-vous sûre de vouloir éditer la recette?",
+        buttons : [
+          {
+            text : "Annuler",
+            role : "cancel"
+          },
+          {
+            text : "Edit",
+            handler : ()=>{
+              //this.recetteService.deleteRecette(this.recetteActive.id);
+              this.router.navigate(["/edit",this.recetteActive.id]);
+              //this.router.navigateByUrl(`/edit/${this.recetteActive.id}`)
+            }
+          }
+        ]
+      }
+    ).then(alertCtr => {
+      alertCtr.present();
+    });
   }
 
 }

@@ -7,12 +7,12 @@ export class Recette {
   ingredients : string[];
 
   constructor(
-      id : number,
-      title : string,
-      description : string,
-      type : number,
-      imageUrl : string,
-      ingredients : string[]){
+       id : number,
+       title : string,
+       description : string,
+       type : number,
+       imageUrl : string,
+       ingredients : string[]){
         this.id = id;
         this.title = title;
         this.description = description;

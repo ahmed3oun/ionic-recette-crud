@@ -1,14 +1,20 @@
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> Recettes tunisiennes </ion-title>
+  </ion-toolbar>
+</ion-header> -->
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
-      Recettes tunisiennes
-    </ion-title>
+    <ion-title>Recettes tunisiennes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let recette of recettes" [routerLink]="['/details', recette.id]">
+    <ion-item
+      *ngFor="let recette of recettes"
+      [routerLink]="['/details', recette.id]"
+    >
       <ion-avatar slot="start">
         <ion-img [src]="recette.imageUrl"></ion-img>
       </ion-avatar>

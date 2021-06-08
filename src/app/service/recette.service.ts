@@ -14,13 +14,13 @@ export class RecetteService {
   constructor() { }
 
   getRecettes(){
-    return [...this.recettes];
+    return [...this.recettes]; // return a cloned array
   }
 
   getRecetteById(id : number){
     return {...this.recettes.find(
       recette => recette.id === id
-    )};
+    )}; // return a cloned object of that array that have a specified id
   }
 
   deleteRecette(id : number){
@@ -32,5 +32,10 @@ export class RecetteService {
 
   addRecette(recette : Recette){
     this.recettes.push(recette);
+  }
+
+  updateRecette(newR){
+    let index = this.recettes.findIndex(e=> e.id === newR.id );
+    this.recettes[index] = newR ;
   }
 }
